@@ -16,9 +16,9 @@ import ma.sir.ged.ws.dto.PurchaseDto;
 public class PurchaseConverter extends AbstractConverter<Purchase, PurchaseDto, PurchaseHistory> {
 
     @Autowired
-    private ProductConverter productConverter ;
-    @Autowired
     private PurchaseItemConverter purchaseItemConverter ;
+    @Autowired
+    private ProductConverter productConverter ;
     private boolean purchaseItems;
 
     public  PurchaseConverter(){
@@ -91,17 +91,17 @@ public class PurchaseConverter extends AbstractConverter<Purchase, PurchaseDto, 
     }
 
 
-    public ProductConverter getProductConverter(){
-        return this.productConverter;
-    }
-    public void setProductConverter(ProductConverter productConverter ){
-        this.productConverter = productConverter;
-    }
     public PurchaseItemConverter getPurchaseItemConverter(){
         return this.purchaseItemConverter;
     }
     public void setPurchaseItemConverter(PurchaseItemConverter purchaseItemConverter ){
         this.purchaseItemConverter = purchaseItemConverter;
+    }
+    public ProductConverter getProductConverter(){
+        return this.productConverter;
+    }
+    public void setProductConverter(ProductConverter productConverter ){
+        this.productConverter = productConverter;
     }
     public boolean  isPurchaseItems(){
         return this.purchaseItems ;

@@ -47,6 +47,10 @@ PurchaseItemHistoryDao> implements PurchaseItemAdminService {
 
 
 
+
+    public void configure() {
+        super.configure(PurchaseItem.class,PurchaseItemHistory.class, PurchaseItemHistoryCriteria.class, PurchaseItemSpecification.class);
+    }
     @Autowired
     private ProductAdminService productService ;
     @Autowired

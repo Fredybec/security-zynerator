@@ -36,6 +36,10 @@ ProductHistoryDao> implements ProductAdminService {
 
 
 
+    public void configure() {
+        super.configure(Product.class,ProductHistory.class, ProductHistoryCriteria.class, ProductSpecification.class);
+    }
+
     public ProductAdminServiceImpl(ProductDao dao, ProductHistoryDao historyDao) {
         super(dao, historyDao);
     }
