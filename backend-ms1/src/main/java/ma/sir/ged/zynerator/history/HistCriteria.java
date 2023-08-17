@@ -1,7 +1,7 @@
 package ma.sir.ged.zynerator.history;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import ma.sir.ged.zynerator.criteria.BaseCriteria;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDateTime;
 

@@ -4,9 +4,9 @@ import ma.sir.ged.zynerator.bean.BusinessObject;
 import ma.sir.ged.zynerator.criteria.BaseCriteria;
 import ma.sir.ged.zynerator.dto.AuditEntityDto;
 import ma.sir.ged.zynerator.security.bean.User;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
-import org.springframework.web.multipart.MultipartFile;
 
 public interface IService<T extends BusinessObject, Criteria extends BaseCriteria, HistoryCriteria> {
 

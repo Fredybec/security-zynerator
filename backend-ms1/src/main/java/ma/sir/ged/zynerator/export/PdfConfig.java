@@ -1,10 +1,10 @@
 package ma.sir.ged.zynerator.export;
 
+import ma.sir.ged.zynerator.util.DateUtil;
+import ma.sir.ged.zynerator.util.Utils;
 import com.itextpdf.text.*;
 import com.itextpdf.text.Font.FontFamily;
 import com.itextpdf.text.pdf.*;
-import ma.sir.ged.zynerator.util.DateUtil;
-import ma.sir.ged.zynerator.util.Utils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;

@@ -1,5 +1,7 @@
 package ma.sir.ged.zynerator.util;
 
+
+
 import ma.sir.ged.zynerator.audit.AuditEntity;
 import ma.sir.ged.zynerator.dto.BaseDto;
 import ma.sir.ged.zynerator.enumeration.ACTION_TYPE;

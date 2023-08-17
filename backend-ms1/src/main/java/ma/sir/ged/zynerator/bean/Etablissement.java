@@ -1,21 +1,17 @@
 package ma.sir.ged.zynerator.bean;
 
-import java.util.Objects;
-
-
-
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
 import ma.sir.ged.zynerator.audit.AuditBusinessObject;
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import jakarta.persistence.*;
+
+import java.util.Objects;
 
 
 @Entity
 @Table(name = "etablissement")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @SequenceGenerator(name="etablissement_seq",sequenceName="etablissement_seq",allocationSize=1, initialValue = 1)
-public class Etablissement   extends AuditBusinessObject  {
+public class Etablissement   extends AuditBusinessObject {
 
     private Long id;
 

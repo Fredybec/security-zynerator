@@ -1,12 +1,12 @@
 package ma.sir.ged.zynerator.audit;
 
+import ma.sir.ged.zynerator.bean.BusinessObject;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
-import ma.sir.ged.zynerator.bean.BusinessObject;
+import jakarta.persistence.Column;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.MappedSuperclass;
 
-import javax.persistence.Column;
-import javax.persistence.EntityListeners;
-import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
 /**

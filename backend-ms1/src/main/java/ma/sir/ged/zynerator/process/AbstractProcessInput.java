@@ -1,11 +1,12 @@
 package ma.sir.ged.zynerator.process;
 
+
+import ma.sir.ged.zynerator.dto.AuditBaseDto;
 import org.apache.commons.collections4.map.HashedMap;
 
 import java.util.Map;
-import ma.sir.ged.zynerator.dto.AuditBaseDto;
 
-public class AbstractProcessInput  extends AuditBaseDto{
+public class AbstractProcessInput  extends AuditBaseDto {
     private Map<String, Object> attributes;
 
     public int putAttribute(String key, Object value) {

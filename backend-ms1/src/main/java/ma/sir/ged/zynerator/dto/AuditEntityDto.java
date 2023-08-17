@@ -1,5 +1,6 @@
 package ma.sir.ged.zynerator.dto;
 
+
 import ma.sir.ged.zynerator.history.HistBusinessObject;
 import ma.sir.ged.zynerator.util.DateUtil;
 

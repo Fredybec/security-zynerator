@@ -3,6 +3,7 @@ package ma.sir.ged.zynerator.service;
 import ma.sir.ged.zynerator.audit.AuditBusinessObject;
 import ma.sir.ged.zynerator.criteria.BaseCriteria;
 import ma.sir.ged.zynerator.dto.AuditEntityDto;
+import ma.sir.ged.zynerator.exception.BusinessRuleException;
 import ma.sir.ged.zynerator.exception.EntityNotFoundException;
 import ma.sir.ged.zynerator.history.HistBusinessObject;
 import ma.sir.ged.zynerator.history.HistCriteria;
@@ -12,39 +13,23 @@ import ma.sir.ged.zynerator.security.bean.User;
 import ma.sir.ged.zynerator.security.service.facade.UserService;
 import ma.sir.ged.zynerator.specification.AbstractHistorySpecification;
 import ma.sir.ged.zynerator.specification.AbstractSpecification;
-import ma.sir.ged.zynerator.util.ListUtil;
-import ma.sir.ged.zynerator.util.RefelexivityUtil;
-import ma.sir.ged.zynerator.util.StringUtil;
-import ma.sir.ged.zynerator.util.Utils;
-
-import ma.sir.ged.zynerator.util.FileUtils;
-import ma.sir.ged.zynerator.util.MD5Checksum;
-import ma.sir.ged.zynerator.exception.BusinessRuleException;
-
-import org.springframework.beans.factory.annotation.Value;
+import ma.sir.ged.zynerator.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-//import org.apache.poi.xssf.usermodel.XSSFSheet;
-//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.springframework.beans.BeanWrapper;
-import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.io.IOException;
-import java.math.BigDecimal;
 
 public abstract class AbstractServiceImpl<T extends AuditBusinessObject, H extends HistBusinessObject, CRITERIA extends BaseCriteria, HC extends HistCriteria, REPO extends AbstractRepository<T, Long>, HISTREPO extends AbstractHistoryRepository<H, Long>> extends AbstractServiceImplHelper<T> {
 

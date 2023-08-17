@@ -1,17 +1,17 @@
 package ma.sir.ged.zynerator.security.service.impl;
 
-import java.util.ArrayList;
-import java.util.List;
 
+import ma.sir.ged.zynerator.security.bean.Permission;
+import ma.sir.ged.zynerator.security.bean.Role;
+import ma.sir.ged.zynerator.security.dao.RoleDao;
+import ma.sir.ged.zynerator.security.service.facade.PermissionService;
+import ma.sir.ged.zynerator.security.service.facade.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import  ma.sir.ged.zynerator.security.bean.Role;
-import  ma.sir.ged.zynerator.security.bean.Permission;
-import ma.sir.ged.zynerator.security.dao.RoleDao;
-import ma.sir.ged.zynerator.security.service.facade.PermissionService;
-import ma.sir.ged.zynerator.security.service.facade.RoleService;
+import java.util.ArrayList;
+import java.util.List;
 
 
 

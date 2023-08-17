@@ -1,13 +1,14 @@
 package ma.sir.ged.zynerator.specification;
 
+
 import ma.sir.ged.zynerator.bean.BusinessObject;
 import ma.sir.ged.zynerator.criteria.BaseCriteria;
 import ma.sir.ged.zynerator.util.ListUtil;
 import ma.sir.ged.zynerator.util.NumberUtil;
 import ma.sir.ged.zynerator.util.StringUtil;
+import jakarta.persistence.criteria.*;
 import org.springframework.data.jpa.domain.Specification;
 
-import javax.persistence.criteria.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;

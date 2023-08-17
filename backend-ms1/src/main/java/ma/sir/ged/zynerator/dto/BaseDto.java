@@ -42,7 +42,7 @@ public class BaseDto implements Serializable {
     /**
      * Méthode hashCode.
      *
-     * @see java.lang.Object#hashCode()
+     * @see Object#hashCode()
      */
     public int hashCode() {
         Serializable pk = id;

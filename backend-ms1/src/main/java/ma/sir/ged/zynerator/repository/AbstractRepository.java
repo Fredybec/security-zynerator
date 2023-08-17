@@ -1,5 +1,6 @@
 package ma.sir.ged.zynerator.repository;
 
+
 import ma.sir.ged.zynerator.audit.AuditBusinessObject;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

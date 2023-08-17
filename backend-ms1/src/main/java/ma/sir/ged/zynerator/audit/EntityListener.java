@@ -1,11 +1,11 @@
 package ma.sir.ged.zynerator.audit;
 
-import ma.sir.ged.zynerator.security.bean.User;
 
+import ma.sir.ged.zynerator.security.bean.User;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 

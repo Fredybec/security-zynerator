@@ -1,15 +1,14 @@
 package ma.sir.ged.zynerator.util;
 
-import com.itextpdf.text.BaseColor;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.Phrase;
-import com.itextpdf.text.pdf.PdfPTable;
 import ma.sir.ged.zynerator.dto.BaseDto;
 import ma.sir.ged.zynerator.export.ColumnModel;
 import ma.sir.ged.zynerator.export.ExportModel;
 import ma.sir.ged.zynerator.export.ReportBuilder;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPTable;
 import org.apache.poi.hssf.usermodel.*;
-import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;

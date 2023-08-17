@@ -1,11 +1,11 @@
 package ma.sir.ged.zynerator.util;
 
+
 import ma.sir.ged.zynerator.audit.AuditEntity;
 import ma.sir.ged.zynerator.audit.Log;
 import ma.sir.ged.zynerator.bean.BusinessObject;
 import ma.sir.ged.zynerator.bean.EnumBean;
 import ma.sir.ged.zynerator.dto.BaseDto;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;

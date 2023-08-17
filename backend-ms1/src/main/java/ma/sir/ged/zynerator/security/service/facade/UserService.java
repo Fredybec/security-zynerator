@@ -1,10 +1,11 @@
 package ma.sir.ged.zynerator.security.service.facade;
 
-import java.util.List;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import ma.sir.ged.zynerator.security.bean.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+import java.util.List;
 
 public interface UserService extends UserDetailsService {
 

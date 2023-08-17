@@ -1,8 +1,8 @@
 package ma.sir.ged.zynerator.dto;
 
 import ma.sir.ged.zynerator.audit.Log;
-import ma.sir.ged.zynerator.dto.AuditBaseDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
+
 
 
 

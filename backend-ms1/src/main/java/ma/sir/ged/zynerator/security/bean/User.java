@@ -1,35 +1,18 @@
 package ma.sir.ged.zynerator.security.bean;
 
-import ma.sir.ged.zynerator.bean.Etablissement;
 import ma.sir.ged.zynerator.audit.AuditBusinessObject;
+import ma.sir.ged.zynerator.bean.Etablissement;
+import jakarta.persistence.*;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDateTime;
-import java.util.*;
-
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Transient;
-import javax.persistence.Table;
-
-import org.springframework.security.core.userdetails.UserDetails;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 @Table(name = "user_app")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class User  extends AuditBusinessObject  implements UserDetails {
+public class User  extends AuditBusinessObject implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;

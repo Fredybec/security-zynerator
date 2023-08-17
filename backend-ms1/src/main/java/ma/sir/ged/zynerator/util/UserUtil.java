@@ -1,5 +1,6 @@
 package ma.sir.ged.zynerator.util;
 
+
 import ma.sir.ged.zynerator.security.bean.User;
 import org.springframework.security.core.context.SecurityContextHolder;
 

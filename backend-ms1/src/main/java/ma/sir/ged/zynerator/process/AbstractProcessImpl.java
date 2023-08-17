@@ -1,5 +1,6 @@
 package ma.sir.ged.zynerator.process;
 
+
 import ma.sir.ged.zynerator.audit.AuditBusinessObject;
 
 public abstract class AbstractProcessImpl<I extends AbstractProcessInput, K extends AbstractProcessOutput, T extends AuditBusinessObject,CONV extends AbstractProcessConverter<I, K, T>> {

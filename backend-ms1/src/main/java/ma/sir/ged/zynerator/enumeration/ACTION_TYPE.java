@@ -1,9 +1,10 @@
 package ma.sir.ged.zynerator.enumeration;
 
+import ma.sir.ged.zynerator.bean.BaseEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import ma.sir.ged.zynerator.bean.BaseEnum;
+
 
 /**
  * ENUM_ACTION_TYPE

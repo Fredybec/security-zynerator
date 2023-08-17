@@ -1,5 +1,6 @@
 package ma.sir.ged.zynerator.exception;
 
+
 import ma.sir.ged.zynerator.security.bean.User;
 import ma.sir.ged.zynerator.util.Utils;
 import org.apache.catalina.connector.ClientAbortException;

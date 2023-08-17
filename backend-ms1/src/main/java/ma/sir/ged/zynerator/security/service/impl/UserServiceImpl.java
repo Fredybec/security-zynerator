@@ -1,28 +1,23 @@
 package ma.sir.ged.zynerator.security.service.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-import java.time.LocalDateTime;
 
-import org.springframework.context.annotation.Lazy;
-
+import ma.sir.ged.zynerator.security.bean.Role;
+import ma.sir.ged.zynerator.security.bean.User;
+import ma.sir.ged.zynerator.security.dao.UserDao;
+import ma.sir.ged.zynerator.security.service.facade.RoleService;
+import ma.sir.ged.zynerator.security.service.facade.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
-import  ma.sir.ged.zynerator.security.bean.Role;
-import ma.sir.ged.zynerator.security.bean.User;
-import ma.sir.ged.zynerator.security.dao.UserDao;
-
-import ma.sir.ged.zynerator.security.service.facade.RoleService;
-import ma.sir.ged.zynerator.security.service.facade.UserService;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {

@@ -1,15 +1,14 @@
 package ma.sir.ged.zynerator.security.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import jakarta.persistence.Table;
+import org.springframework.security.core.GrantedAuthority;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.security.core.GrantedAuthority;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import javax.persistence.Table;
 
 @Entity
 @Table(name = "role_app")

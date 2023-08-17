@@ -1,9 +1,9 @@
 package ma.sir.ged.zynerator.util;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.math.BigDecimal;
 
 public class StringUtil {
 

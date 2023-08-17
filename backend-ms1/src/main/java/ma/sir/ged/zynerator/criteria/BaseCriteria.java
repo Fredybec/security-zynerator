@@ -1,5 +1,7 @@
 package ma.sir.ged.zynerator.criteria;
 
+
+
 import ma.sir.ged.zynerator.export.ExportModel;
 
 import java.io.Serializable;

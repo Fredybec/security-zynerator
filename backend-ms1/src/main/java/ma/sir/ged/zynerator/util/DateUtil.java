@@ -1,5 +1,6 @@
 package ma.sir.ged.zynerator.util;
 
+
 import ma.sir.ged.zynerator.exception.BusinessRuleException;
 import org.springframework.util.StringUtils;
 

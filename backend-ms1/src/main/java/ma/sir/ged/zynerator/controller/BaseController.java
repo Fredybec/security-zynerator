@@ -1,10 +1,12 @@
 package ma.sir.ged.zynerator.controller;
 
+
 import ma.sir.ged.zynerator.exception.GlobalException;
 import ma.sir.ged.zynerator.export.ExportModel;
 import ma.sir.ged.zynerator.util.BirtWarpper;
 import ma.sir.ged.zynerator.util.ExportUtil;
 import ma.sir.ged.zynerator.util.FileUtils;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
@@ -16,7 +18,6 @@ import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -33,7 +34,7 @@ public abstract class BaseController {
 
     protected static ClientHttpRequestFactory clientHttpRequestFactory() {
         HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
-        factory.setReadTimeout(200000);
+//        factory.setReadTimeout(200000);
         factory.setConnectTimeout(200000);
         return factory;
     }

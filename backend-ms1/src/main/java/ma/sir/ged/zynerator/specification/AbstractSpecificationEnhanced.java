@@ -3,12 +3,11 @@ package ma.sir.ged.zynerator.specification;
 
 import ma.sir.ged.zynerator.audit.AuditBusinessObjectEnhanced;
 import ma.sir.ged.zynerator.criteria.BaseCriteriaEnhanced;
-import org.springframework.data.jpa.domain.Specification;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
