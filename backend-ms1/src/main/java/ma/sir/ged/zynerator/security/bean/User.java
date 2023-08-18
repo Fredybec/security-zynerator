@@ -52,6 +52,12 @@ public class User  extends AuditBusinessObject implements UserDetails {
         this.email = username;
     }
 
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
+
 
     public boolean getCredentialsNonExpired() {
     return credentialsNonExpired;

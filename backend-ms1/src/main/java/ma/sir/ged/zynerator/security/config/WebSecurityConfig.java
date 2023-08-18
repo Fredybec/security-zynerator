@@ -1,12 +1,15 @@
 package ma.sir.ged.zynerator.security.config;
 
 import ma.sir.ged.zynerator.security.bean.ERole;
+import ma.sir.ged.zynerator.security.common.AuthoritiesConstants;
 import ma.sir.ged.zynerator.security.jwt.AuthEntryPointJwt;
 import ma.sir.ged.zynerator.security.jwt.AuthTokenFilter;
-import ma.sir.ged.zynerator.security.service.UserDetailsServiceImpl;
+
+import ma.sir.ged.zynerator.security.service.facade.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -25,7 +28,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 // prePostEnabled = true) // by default
 public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
   @Autowired
-  UserDetailsServiceImpl userDetailsService;
+  UserService userDetailsService;
 
   @Autowired
   private AuthEntryPointJwt unauthorizedHandler;
@@ -80,13 +83,22 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
   
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    http.securityContext((securityContext) -> securityContext.requireExplicitSave(false));
     http.csrf(csrf -> csrf.disable())
         .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-        .authorizeHttpRequests(auth -> 
-          auth.requestMatchers("/api/auth/**").permitAll()
-              .requestMatchers("/api/test/**").hasAnyAuthority(String.valueOf(ERole.ROLE_USER))
-              .anyRequest().authenticated()
+        .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/actuator/health").permitAll()
+                        .requestMatchers("/actuator/info").permitAll()
+                        .requestMatchers("/api/open/translation/**").permitAll()
+                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/admin/").hasAnyAuthority(AuthoritiesConstants.ADMIN)
+                        .anyRequest().authenticated()
+//          auth.requestMatchers("/login").permitAll()
+//                  .requestMatchers("/api/auth/**").permitAll()
+//                  .requestMatchers("/error").permitAll()
+//              .requestMatchers("/api/test/**").hasAnyAuthority(String.valueOf(ERole.ROLE_USER))
+
         );
     
     http.authenticationProvider(authenticationProvider());

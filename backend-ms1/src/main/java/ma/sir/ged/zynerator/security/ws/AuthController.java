@@ -1,11 +1,10 @@
 package ma.sir.ged.zynerator.security.ws;
 
 
+import ma.sir.ged.zynerator.security.bean.*;
 import ma.sir.ged.zynerator.security.dao.RoleRepository;
+import ma.sir.ged.zynerator.security.dao.UserDao;
 import ma.sir.ged.zynerator.security.dao.UserRepository;
-import ma.sir.ged.zynerator.security.bean.ERole;
-import ma.sir.ged.zynerator.security.bean.RoleS;
-import ma.sir.ged.zynerator.security.bean.UserS;
 import ma.sir.ged.zynerator.security.jwt.JwtUtils;
 import ma.sir.ged.zynerator.security.payload.request.LoginRequest;
 import ma.sir.ged.zynerator.security.payload.request.SignupRequest;
@@ -39,7 +38,7 @@ public class AuthController {
   AuthenticationManager authenticationManager;
 
   @Autowired
-  UserRepository userRepository;
+  UserDao userRepository;
 
   @Autowired
   RoleRepository roleRepository;
@@ -58,7 +57,7 @@ public class AuthController {
 
     SecurityContextHolder.getContext().setAuthentication(authentication);
     String jwt = jwtUtils.generateJwtToken(authentication);
-    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+    User userDetails = (User) authentication.getPrincipal();
     List<String> roles = userDetails.getAuthorities().stream()
             .map(item -> item.getAuthority())
             .collect(Collectors.toList());
@@ -92,42 +91,42 @@ public class AuthController {
     }
 
     // Create new user's account
-    UserS userS = new UserS(signUpRequest.getUsername(),
+    User user = new User(signUpRequest.getUsername(),
                signUpRequest.getEmail(),
                encoder.encode(signUpRequest.getPassword()));
 
     Set<String> strRoles = signUpRequest.getRole();
-    Set<RoleS> roles = new HashSet<>();
+    Set<Role> roles = new HashSet<>();
 
-    if (strRoles == null) {
-      RoleS userRoleS = roleRepository.findByName(ERole.ROLE_USER)
-          .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-      roles.add(userRoleS);
-    } else {
-      strRoles.forEach(role -> {
-        switch (role) {
-        case "admin":
-          RoleS adminRoleS = roleRepository.findByName(ERole.ROLE_ADMIN)
-              .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-          roles.add(adminRoleS);
+//    if (strRoles == null) {
+//      RoleS userRoleS = roleRepository.findByName(ERole.ROLE_USER)
+//          .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+//      roles.add(userRoleS);
+//    } else {
+//      strRoles.forEach(role -> {
+//        switch (role) {
+//        case "admin":
+//          Role adminRoleS = roleRepository.findByName(ERole.ROLE_ADMIN)
+//              .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+//          roles.add(adminRoleS);
+//
+//          break;
+//        case "mod":
+//          Role modRoleS = roleRepository.findByName(ERole.ROLE_MODERATOR)
+//              .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+//          roles.add(modRoleS);
+//
+//          break;
+//        default:
+//          Role userRoleS = roleRepository.findByName(ERole.ROLE_USER)
+//              .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+//          roles.add(userRoleS);
+//        }
+//      });
+//    }
 
-          break;
-        case "mod":
-          RoleS modRoleS = roleRepository.findByName(ERole.ROLE_MODERATOR)
-              .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-          roles.add(modRoleS);
-
-          break;
-        default:
-          RoleS userRoleS = roleRepository.findByName(ERole.ROLE_USER)
-              .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-          roles.add(userRoleS);
-        }
-      });
-    }
-
-    userS.setRoles(roles);
-    userRepository.save(userS);
+    user.setRoles(roles);
+    userRepository.save(user);
 
     return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
   }
